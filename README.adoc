@@ -1,0 +1,8 @@
+= A Random Collection of Sheet Music
+
+image::my-feelings.png[My Feelings,50%]
+
+These are the https://lilypond.org/[Lilypond] source files for a
+collection of music scores for my practice purposes. Some of them I
+transcribed myself; others I found online, but looked so terrible I
+had to re-engrave them.
