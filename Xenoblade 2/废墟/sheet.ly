@@ -1,10 +1,10 @@
 \version "2.18.2"
 
 \header {
-  title = \markup {\override #'(font-name . "Songti TC") { 廃墟 }}
-  composer = \markup {\override #'(font-name . "Songti TC") { 清田愛未 }}
-  copyright = "v0.1"
-  tagline = "Engraved by MetroWind"
+  title = \markup {\override #'(font-name . "Source Han Serif SemiBold") { 廃墟 }}
+  composer = \markup {\override #'(font-name . "Source Han Serif") { 清田愛未 }}
+  copyright = "v1.0"
+  tagline = "Transcribed by MetroWind"
 }
 
 %% This may not work with LilyPond 2.19.
@@ -125,11 +125,17 @@ lower =
     <d f a>4 <d f a>2 | <a c e g>4 <a c e g>2 | <bes d f a>4 <bes d f a>2 |
     <a c f>4 <a c f>2 | <bes d f>4 <bes d f>2 | <a c f>4 <a c f>2 |
     %% <g bes d f>4 <g bes d f>2 | <a cis e g>4 <a cis e g>2 |
+  }
 
-    %% Bridge
+  \transpose c f
+  {
     \clef bass
-    ais,,8 d a' d f4 | ais,,8 d a' d f4 | a,,8 e' a c e4 | a,,8 e' a c e4 |
-    ais,,8 d a' d f4 | ais,,8 d a' d f4 | a,,8 e' a c e4 | a,,8 e' a c e4 |
+    \relative c'
+    {
+      %% Bridge
+      ais,,8 d a' d f4 | ais,,8 d a' d f4 | a,,8 e' a c e4 | a,,8 e' a c e4 |
+      ais,,8 d a' d f4 | ais,,8 d a' d f4 | a,,8 e' a c e4 | a,,8 e' a c e4 |
+    }
   }
 
 
@@ -195,13 +201,14 @@ lower =
   {
     \relative c'
     {
-      \clef bass <ais, f' a>2.\arpeggio
+      \clef bass <ais, f' a>2.\arpeggio \bar "|."
     }
   }
 }
 
 \score {
   \new PianoStaff <<
+    \set PianoStaff.connectArpeggios = ##t
     %% \set PianoStaff.instrumentName = #"Piano  "
     \new Staff = "upper" \upper
     \new Staff = "lower" \lower
