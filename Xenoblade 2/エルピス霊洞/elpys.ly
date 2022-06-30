@@ -1,5 +1,16 @@
 \version "2.19.82"
 
+#(set! paper-alist
+  (cons '("kobo" . (cons (* 15.7 cm) (* 20.9 cm))) paper-alist))
+#(set-default-paper-size "kobo")
+#(set-global-staff-size 18)
+\paper {
+  top-margin = 0
+  bottom-margin = 0
+  left-margin = 5
+  right-margin = 1
+}
+
 \header {
   title = \markup{ \override #'(font-name . "Source Han Serif SemiBold") {エルピス霊洞} }
   composer = \markup{\override #'(font-name . "Source Han Serif") {清田愛未}}

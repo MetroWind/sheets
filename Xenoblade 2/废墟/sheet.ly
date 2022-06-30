@@ -1,9 +1,20 @@
 \version "2.18.2"
 
+#(set! paper-alist
+  (cons '("kobo" . (cons (* 15.7 cm) (* 20.9 cm))) paper-alist))
+#(set-default-paper-size "kobo")
+#(set-global-staff-size 18)
+\paper {
+  top-margin = 0
+  bottom-margin = 0
+  left-margin = 5
+  right-margin = 1
+}
+
 \header {
   title = \markup {\override #'(font-name . "Source Han Serif SemiBold") { 廃墟 }}
   composer = \markup {\override #'(font-name . "Source Han Serif") { 清田愛未 }}
-  copyright = "v1.0"
+  copyright = "v1.1"
   tagline = "Transcribed by MetroWind"
 }
 
@@ -168,7 +179,7 @@ lower =
       % r2. | <a c>4 <a c>2 | <g b>4 <g b>2 | <a c>4 <a c>2 | <g c>4 <g c>2 |
       % <a c>4 <a c>2 | <g c>4 <g c>2 | <a c>4 <a c>2 | <b e>4 <b e>2 |
 
-      %% 1st movement variation
+  %% 1st movement variation
   \transpose c f
   {
     \relative c'
