@@ -35,13 +35,14 @@ upper =
     \clef "treble"
     \time 3/4
 
-    r2 c8 d \bar ".|:" e4 e c | d2 g8 f | e4 e c | d c c8 d | e4 e
-    c | d e f | d c bes | c2.~ | c | r | r2 c8 d \bar ":|." d4 c bes |
+    r2 c8 d \bar ".|:" e4 e c | d2 g8 f | e4 e c | d c c8 d | e4 e c |
+    d e f | d c bes | c2.~ | c | r | r2 c8 d \bar ":|." d4 c bes |
     c2.~ | c2. | r2. | r2 g'8 a8 |
 
     \sectionmark "Main"
 
-    bes4. a8 g4 | a g f | e8 f g4 f | e c g'8 a | bes4. a8 g4 | a g f | g c b | c2 g8 a |
+    bes4. a8 g4 | a g f | e8 f g4 f | e c g'8 a | bes4. a8 g4 | a g f
+    | g c b | c2 g8 a |
 
   }
 }
@@ -53,10 +54,10 @@ lower = {
     \key f \major
     \time 3/4
 
-    r2. \bar ".|:" c | bes | c | bes | c | bes | ges | f8 c' f c g c |
-    a c g c f c | f, c' f c g c | a2 r4 \bar ":|." f2. | ees8 bes' ees
-    bes f' bes, | g' bes, f' bes, ees bes | ees, bes' ees bes f' bes,
-    | g'2. |
+    r2. \bar ".|:" c | bes | c | bes | c | bes | ges | f8 c' f c g' c,
+    | a' c, g' c, f c | f, c' f c g' c, | a'2 r4 \bar ":|." f,2. |
+    ees8 bes' ees bes f' bes, | g' bes, f' bes, ees bes | ees, bes'
+    ees bes f' bes, | g'2. |
 
     \sectionmark "Main"
 
