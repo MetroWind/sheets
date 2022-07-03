@@ -37,7 +37,7 @@ upper =
 
     r16 c d e f d e c g'8 c b-\prall c |
     d16 g, a b c a b g d'8 g f-\prall g |
-    d16 a' g f e g f a g f e d c e d f |
+    e16 a g f e g f a g f e d c e d f |
     e d c b a c b d c b a g fis a g b |
     a8 d, c'8.-\mordent d16 b a g fis e g fis a |
     g b a c b d  c e  d b32 c d16 g b,8-\prall a16 g |
