@@ -35,10 +35,10 @@ upper =
     \clef "treble"
     \time 4/4
 
-    r16 c d e f d e c g'8 c b-\prall c |
-    d16 g, a b c a b g d'8 g f-\prall g |
-    e16 a g f e g f a g f e d c e d f |
-    e d c b a c b d c b a g fis a g b |
+    r16 c-1 d e f d e c g'8-1 c b-\prall c |
+    d16-5 g,-1 a b c a b g d'8-1 g f-\prall g |
+    e16-2 a g f e g f a-5 g-5 f e d c e d f |
+    e-3 d c b-3 a c b d-5 c-5 b a g fis a g b |
     a8 d, c'8.-\mordent d16 b a g fis e g fis a |
     g b a c b d  c e  d b32 c d16 g b,8-\prall a16 g |
     g8 r8 r4 r16 g a b c a b g |
@@ -68,9 +68,9 @@ lower = {
     \clef "bass"
     \time 4/4
 
-    r2 r16 c d e f d e c |
-    g'8-"G" g,-"G" r4 r16 g' a b c a b g |
-    c8 b c d e g, a b |
+    r2 r16 c-5 d e f d e c |
+    g'8-"G" g,-"G" r4 r16 g'-5 a b c a b g |
+    c8-2 b c d-1 e-1 g, a b |
     c e, fis g a b c4~ |
     c16 d, e fis g e fis d g8 b, c d |
     e fis g e b8. c16 d8 d, |
