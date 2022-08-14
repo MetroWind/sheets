@@ -1,15 +1,22 @@
 \version "2.18.2"
 
-#(set! paper-alist
-  (cons '("kobo" . (cons (* 15.7 cm) (* 20.9 cm))) paper-alist))
-#(set-default-paper-size "kobo")
-#(set-global-staff-size 18)
-\paper {
-  top-margin = 0
-  bottom-margin = 0
-  left-margin = 5
-  right-margin = 1
-}
+#(use-modules (guile-user))
+$(case output-spec
+  ((letter)
+   (set-default-paper-size "letter"))
+  ((kobo)
+   (set! paper-alist
+    (cons '("kobo" . (cons (* 15.7 cm) (* 20.9 cm))) paper-alist))
+   (set-global-staff-size 18)
+   (set-default-paper-size "kobo")
+   #{
+     \paper {
+     top-margin = 0
+     bottom-margin = 0
+     left-margin = 5
+     right-margin = 0
+     }
+   #}))
 
 \header {
   title = \markup {\override #'(font-name . "Source Han Serif SemiBold") { 廃墟 }}

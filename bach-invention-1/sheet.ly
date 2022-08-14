@@ -1,20 +1,27 @@
 \version "2.23.2"
 
-#(set! paper-alist
-  (cons '("kobo" . (cons (* 15.7 cm) (* 20.9 cm))) paper-alist))
-#(set-default-paper-size "kobo")
-#(set-global-staff-size 18)
-\paper {
-  top-margin = 0
-  bottom-margin = 0
-  left-margin = 5
-  right-margin = 0
-}
+#(use-modules (guile-user))
+$(case output-spec
+  ((letter)
+   (set-default-paper-size "letter"))
+  ((kobo)
+   (set! paper-alist
+    (cons '("kobo" . (cons (* 15.7 cm) (* 20.9 cm))) paper-alist))
+   (set-global-staff-size 18)
+   (set-default-paper-size "kobo")
+   #{
+     \paper {
+     top-margin = 0
+     bottom-margin = 0
+     left-margin = 5
+     right-margin = 0
+     }
+   #}))
 
 \header {
   title = "Invention 1"
   composer = "J.S. Bach"
-  copyright = "v0.1"
+  copyright = "v0.2"
   tagline = "Engraved by MetroWind, with LilyPond"
 }
 
@@ -37,10 +44,10 @@ upper =
 
     r16 c-1 d e f d e c g'8-1 c b-\prall c |
     d16-5 g,-1 a b c a b g d'8-1 g f-\prall g |
-    e16-2 a g f e g f a-5 g-5 f e d c e d f |
-    e-3 d c b-3 a c b d-5 c-5 b a g fis a g b |
-    a8 d, c'8.-\mordent d16 b a g fis e g fis a |
-    g b a c b d  c e  d b32 c d16 g b,8-\prall a16 g |
+    e16-2 a g f e g f a-5 g-4 f e d c-2 e d f |
+    e-4 d c b-1 a-2 c b d-5 c-4 b a g-1 fis-2 a g b |
+    a8 d, c'8.-\mordent-4 d16 b-3 a g fis-3 e g fis a |
+    g-1 b a c b-1 d  c e  d-3 b32 c d16 g b,8-\prall-3 a16 g |
     g8 r8 r4 r16 g a b c a b g |
     fis8-\prall r8 r4 r16 a b c d  b c a |
     b8 r8 r4 r16 d c b a c b d |

@@ -1,6 +1,6 @@
 \version "2.22.1"
 
-\include "includes/header-paper-kobo.ily"
+\include "includes/header-paper.ily"
 \include "includes/nocturne-op15-no3-parts.ily"
 
 \bookpart {
