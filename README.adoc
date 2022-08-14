@@ -1,6 +1,6 @@
 = A Random Collection of Sheet Music
 
-image::my-feelings.png[My Feelings]
+image::title.png[Title Picture]
 
 These are the https://lilypond.org/[Lilypond] source files for a
 collection of music scores for my practice purposes. Some of them I
