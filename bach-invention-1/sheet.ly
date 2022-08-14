@@ -42,8 +42,8 @@ upper =
     \clef "treble"
     \time 4/4
 
-    r16 c-1 d e f d e c g'8-1 c b-\prall c |
-    d16-5 g,-1 a b c a b g d'8-1 g f-\prall g |
+    r16 c-1 d e f d e c g'8-2 c-4 b-\prall c |
+    d16-5 g,-1 a b c a b g d'8-2 g-4 f-\prall g |
     e16-2 a g f e g f a-5 g-4 f e d c-2 e d f |
     e-4 d c b-1 a-2 c b d-5 c-4 b a g-1 fis-2 a g b |
     a8 d, c'8.-\mordent-4 d16 b-3 a g fis-3 e g fis a |
@@ -77,8 +77,8 @@ lower = {
 
     r2 r16 c-5 d e f d e c |
     g'8-"G" g,-"G" r4 r16 g'-5 a b c a b g |
-    c8-2 b c d-1 e-1 g, a b |
-    c e, fis g a b c4~ |
+    c8-2 b-4 c d e-1 g,-5 a b |
+    c e,-4 fis g a b c4~ |
     c16 d, e fis g e fis d g8 b, c d |
     e fis g e b8. c16 d8 d, |
     r16 g16 a b c a b g d'8 g fis g |
