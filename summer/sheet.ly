@@ -60,6 +60,26 @@ upper =
         <fis d gis,>8 <fis d gis,>16 <fis d gis,>16~ <fis d gis,>8 <fis d gis,> <fis cis g>4 \tuplet 3/2 8 {<b e,>16 fis e} d16 b |
       }
     }
+
+    %% 14
+    d4 <d fis,>8 a fis2 | <fis d b>4\arpeggio <d b>8 <d fis> <e cis b>2 |
+    <d e fis a>4\arpeggio <a' fis d>8 e16 d <d e fis a>4\arpeggio <a' fis d>8 e16 d |
+    <d e fis a>4\arpeggio <a' fis d>8 e16 d  <e cis b>2 |
+
+    %% 18
+    a'16 a, d e a e d a a' a, d e a e d a  |
+    a'16 a, d e a e d a a' a, d e a e d a  |
+    a'16 a, d e a e d a a' a, d e a e d a  |
+    a'16 a, d e a e d a a' a, d e a e d a  |
+
+    \key e \minor
+    %% 22
+    d' d, g a d a g d d' d, g a d a g d |
+    d' d, g a d a g d d' d, g a d a g d |
+    d' d, g a d a g d d' d, g a d a g d |
+    d' d, g a d a g d d' d, g a d a g d |
+
+    %% 26
   }
 }
 
@@ -93,6 +113,30 @@ lower = {
         e, b' e b <a a'>2 |
       }
     }
+
+    %% 14
+    d8 a' d a b, fis' b fis | g, d' g d a e' a e |
+    d8 a' d a b, fis' b fis | g, d' g d a e' a e |
+
+    %% 18
+    <d fis a d>4 <d fis a d> <e g a d> <e g a d> |
+    <fis a d> <fis a d> <e g d' >8. <d fis d'>16~<d fis d'>8 <cis e a>8 |
+    <d fis a d>8\staccato <d fis a d>\staccato <d fis a d>\staccato <d fis a d>\staccato
+    <e g a d>\staccato <e g a d>\staccato <e g a d>\staccato <e g a d>\staccato |
+    <fis a d>\staccato <fis a d>\staccato <fis a d>\staccato <fis a d>\staccato
+    <e g d' >8. <d fis d'>16~<d fis d'>8 <cis e a>8 |
+
+    \key e \minor
+    %% 22
+    \clef "treble"
+    <g' b d g>4 <g b d g> <a c d g> <a c d g> |
+    <b d g> <b d g> <a c g'>8. <g b g'>16~<g b g'>8 <fis a d> |
+    <g b d g>8 <g b d g> <g b d g> <g b d g>
+    <a c d g> <a c d g> <a c d g> <a c d g> |
+    <b d g>8\staccato <b d g>\staccato <b d g>\staccato <b d g>\staccato
+    <a c g'>8. <g b g'>16~<g b g'>8 <fis a d> |
+
+    %% 26
   }
 
 }
