@@ -21,8 +21,9 @@ $(case output-spec
 \header {
   title = \markup {\override #'(font-name . "Source Han Serif SemiBold") { 廃墟 }}
   composer = \markup {\override #'(font-name . "Source Han Serif") { 清田愛未 }}
-  copyright = "v1.1"
-  tagline = "Transcribed by MetroWind"
+  arranger = "Arrangment by MetroWind"
+  copyright = "v2.0"
+  tagline = \markup {\override #'(font-name . "Source Han Serif") { 最新官方完整加强绿色硬盘版 }}
 }
 
 %% This may not work with LilyPond 2.19.
@@ -46,17 +47,14 @@ upper =
     \relative c''
     {
       %% 1st movement
-      \sectionmark "Main movement"
       r2 a'8 g8 | e2 g8 fis8 | d2 e8 d8 | a4 b c | g2. | r4 a b | d c4.
       g8 | a4 e' d | c b
 
       %% Repeat 1st movement
       a'8 g8 |
-      \sectionmark "Main movement repeat"
       e2 g8 fis8 | d2 e8 d8 | a4 b c | g2. | r4 a b | d c4. g8 |
 
       %% Bridge
-      \sectionmark "Bridge"
       <d f a>2.~\arpeggio | <d f a>4 e' d | <e c a>8\arpeggio g e2~ | e4 a, g |
       <d f a>2.~\arpeggio | <d f a>4 e' d | <e c a>8\arpeggio g e2~ | e4 d c |
     }
@@ -71,7 +69,6 @@ upper =
       <a, c e>4 \arpeggio d e | a, g' f | e d a | <e gis b>2.\arpeggio
 
     %% Second bridge
-      \sectionmark "2nd bridge"
       \time 4/4
       \tempo 4 = 45
       \tuplet 3/2 4 {c'8 b a b a g a g' f e~ e b} |
@@ -91,11 +88,9 @@ upper =
     \relative c''
     {
       %% 1st movement again
-      \sectionmark "Main movement"
       r2 a'8 g8 | e2 g8 fis8 | d2 e8 d8 | a4 b c | g2. | r4 a b | d c4.
       g8 | a4 e' d | c b a'8 g |
 
-      \sectionmark "Variation"
       %% 1st movement repeat but with varied left hand
       e2 g8 fis8 | d2 e8 d8 | a4 b c | g2. | r4 a b | d c4.
       g8 | a4 g f | e a,2 | <d f a>4\arpeggio g f | e d c |
@@ -111,7 +106,6 @@ upper =
     }
   }
 
-  \sectionmark "End"
   \transpose c f
   {
     \key c \major
@@ -133,7 +127,7 @@ lower =
     \relative c'
     {
       %% 1st movement
-      r2. | <a c>4 <a c>2 | <g b>4 <g b>2 | <a c>4 <a c>2 | <g c>4 <g c>2 |
+      r2._\markup{\italic "con pedale"} | <a c>4 <a c>2 | <g b>4 <g b>2 | <a c>4 <a c>2 | <g c>4 <g c>2 |
       <a c>4 <a c>2 | <g c>4 <g c>2 | <a c>4 <a c>2 | <b e>4 <b e>2 |
     }
   }
@@ -169,7 +163,8 @@ lower =
       %% Second bridge
       \time 4/4
       <a' c>4 <b g> <a f> <g e> | <d f> <g e> <a f> <b g> |
-      <a c>4 <b g> <a f> <g e> | <d f> <g e> <a f> <b g>~ | <b g>1
+      \tuplet 3/2 4 {a,8 c e g, b d f, a c e, g b} |
+      \tuplet 3/2 4 {d, f a e g b f a c} <g d'>4~ | <g d'>1
     }
   }
 
