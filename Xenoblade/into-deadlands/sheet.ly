@@ -63,6 +63,17 @@ upper =
       { \voiceOne g a bes d g4 ees }
       \new Voice { \voiceTwo bes,4 c bes2 }
     >> \oneVoice |
+    %% 19
+    <<
+      { \voiceOne d'8 c d ees d4 a8 bes }
+      \new Voice { \voiceTwo bes4 g a fis}
+    >> \oneVoice |
+    <g d bes>2. \set Staff.ottavationMarkups = #ottavation-ordinals
+    \ottava #1 <ees'' g>8 <d f> | <c ees>2 <c ees>8 <bes d> <a c> <c ees> |
+    %% 22
+    <a d d,>4 <fis c'> <d a'> <d g>8 <fis a> | <g bes> <bes d>4. <c, f a>8 <a' d>4. |
+    <g, ees' g>4 <d' f> <c ees>2 |
+
   }
 }
 
@@ -90,6 +101,10 @@ lower =
     %%16
     bes, d f bes d d, bes' f | a, c <ees a> ees'-"R" d, fis a4 |
     g,8 d' f, c' ees, bes' d, d' |
+    %% 19
+    c,8 g' c4 d,8 a' d4 | g,8 d' g a bes d,4 g8 | c,,8 g' c ees g c ees c |
+    %% 22
+    d,,8 a' d fis a fis d' fis | g,, d' bes' g f, c' a' f | ees, bes' ees g c,, c' g' c |
   }
 }
 
