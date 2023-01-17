@@ -79,12 +79,12 @@ MvtOneUpper =  \relative e'
   {
     \clef "treble" \time 4/4 \key c \major
     s8*5 <e-1 c'-5>8_\dolce \st <f d'>8\st <g e'>8\st | % 1
-    <a f'>4.-> <g e'>8 \st <f d'>4. <fis dis'>8 \st| % 2
+    <a f'>4.-> <g e'>8 \st <f d'>4. <fis dis'-4>8 \st| % 2
     <g e'>4.-> <f d'>8 \st <e c'>4. c'8-3 \st | % 3
     c16-4 ( b a g fis-2 \cresc g-1 a b c-1 \! d e f g8\mf\st ) <c,-2 g'-5>8\st | % 4
     <b-1 g'-5>8 \st <c g'>8 \st <b g'>8 \st <c g'>8 \st <b g'>8 \st g16-1 [( a16] b16
     c16-1 d16 e16 | % 5
-    <d f>4.->_\dolce ) <c e>8 \st <b d>4. <b d>8 \st | % 6
+    <d f>4.->_\dolce ) <c e>8 \st <b-1 d-2>4. <b d>8 \st | % 6
     <e g>4.-> <d-1 f-4>8 \st <cis-2 e-3>4. <cis e>8 \st | % 7
     <d-1 f-4>8 \st a'16-5-> ( g16 f16 e16 d16-1 c16-2 b8-1 \st) b'16-> ( a16 g16
     f16 e16 d16-3 | % 8
@@ -371,13 +371,13 @@ MvtOneLower =  \relative c'
     %% 3
     r8 c8-1 \st c8-2 \st r8 r8 c8-1 \st c8-2 \st r8 |
     %% 4
-    <g-5 d'-2>2 -> ( <c-3 e-1>4. ) <c-3 e-1>8 |
+    <g_5 d'_2>2 -> ( <c_3 e_1>4. ) <c-3 e-1>8 |
     %% 5
     <g d'>8 \st <c e>8 \st <g d'>8 \st <c e>8 \st <g d'>4 \st r4 |
     %% 6
     \clef "treble" r8 g'8-1 \st g8-2 \st r8 r8 <f-2 g-1>8 \st <f g>8 \st r8 |
     %% 7
-    r8 <e g>8 <e g>8 r8 r8 <a, g'>8 <a g'>8 r8 |
+    r8 <e g>8 \st <e g>8 \st r8 r8 <a, g'>8 \st <a g'>8 \st r8 |
     %% 8
     <d-3 f-1>4 r4 \clef "bass" <g, d' f>2 ( -> |
     %% 9
