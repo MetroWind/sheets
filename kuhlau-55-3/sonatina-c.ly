@@ -5,7 +5,18 @@
 $(case output-spec
   ((letter)
    (set-global-staff-size 18)
-   (set-default-paper-size "letter"))
+   (set-default-paper-size "letter")
+   #{
+   \paper {system-system-spacing =
+   #'((basic-distance . 4)
+       (minimum-distance . 4)
+       (padding . 1)
+      (stretchability . 60))
+     left-margin = 5
+     right-margin = 5
+         }
+   #}
+  )
   ((kobo)
    (set! paper-alist
     (cons '("kobo" . (cons (* 15.7 cm) (* 20.9 cm))) paper-alist))
@@ -26,6 +37,10 @@ $(case output-spec
   title =  "Sonatina in C Major"
   subtitle = "Op. 55 No. 3"
 }
+
+st = \staccato
+dolce = \markup{\italic "dolce."}
+legato = \markup{\italic "legato."}
 
 % PartPOneVoiceOne =  \relative a'' {
 %     \repeat volta 2 {
@@ -56,54 +71,58 @@ $(case output-spec
 %     r4 \bar "|."
 %     }
 
-MvtOneUpper =  \relative e' {
+MvtOneUpper =  \relative e'
+{
+  %% \set fingeringOrientations = #'(up)
   \mark "Allegro con spirito."
-  \repeat volta 2 {
+  \repeat volta 2
+  {
     \clef "treble" \time 4/4 \key c \major
-    s8*5 <e-1 c'-5>8 <f d'>8 <g e'>8 | % 1
-    <a f'>4.-> <g e'>8 <f d'>4. <fis dis'>8 | % 2
-    <g e'>4.-> <f d'>8 <e c'>4. c'8-3 | % 3
-    c16-4 b a g fis-2 g-1 a b c-1 d e f g8\mf <c,-2 g'-5>8 | % 4
-    <b-1 g'-5>8 <c g'>8 <b g'>8 <c g'>8 <b g'>8 g16-1 [( a16] b16
+    s8*5 <e-1 c'-5>8_\dolce \st <f d'>8\st <g e'>8\st | % 1
+    <a f'>4.-> <g e'>8 \st <f d'>4. <fis dis'>8 \st| % 2
+    <g e'>4.-> <f d'>8 \st <e c'>4. c'8-3 \st | % 3
+    c16-4 ( b a g fis-2 \cresc g-1 a b c-1 \! d e f g8\mf\st ) <c,-2 g'-5>8\st | % 4
+    <b-1 g'-5>8 \st <c g'>8 \st <b g'>8 \st <c g'>8 \st <b g'>8 \st g16-1 [( a16] b16
     c16-1 d16 e16 | % 5
-    <d f>4. ) <c e>8 <b d>4. <b d>8 | % 6
-    <e g>4. <d-1 f-4>8 <cis-2 e-3>4. <cis e>8 | % 7
-    <d-1 f-4>8 a'16 -5 g16 f16 e16 d16 -1 c16 -2 b8 -1 b'16 a16 g16
+    <d f>4.->_\dolce ) <c e>8 \st <b d>4. <b d>8 \st | % 6
+    <e g>4.-> <d-1 f-4>8 \st <cis-2 e-3>4. <cis e>8 \st | % 7
+    <d-1 f-4>8 \st a'16-5-> ( g16 f16 e16 d16-1 c16-2 b8-1 \st) b'16-> ( a16 g16
     f16 e16 d16-3 | % 8
-    c8-1 <g-1 b-3>8  <g c>8 <g b>8 <g c>4 r4 | % 9
+    c8 ) \st <g-1 b-3>8 \st  <g c>8 \st <g b>8 \st <g c>4 r4 | % 9
     \barNumberCheck #10
-    c'8 \f b16 a16 g16 f16-1 e16-3 d16
+    c'8-5 ( \sf b16 a16 g16 f16-1 e16-3 d16
     c16-1 b16-4 a16 g16 f16 e16-3 d16 c16 | % 10
-    b8 -2 \p b8 d16 c16 b16 c16 d4 r4 | % 11
-    d''8 \f c16 b16 a16 g16 f16 e16 d16 c16 b16 a16 g16 f16 e16
+    b8 -2 )\st \p b8 \st d16 c16 b16 c16 d4 \st r4 | % 11
+    d''8-4 ( \sf c16 b16 a16 g16-1 f16-3 e16 d16-1 c16-4 b16 a16 g16-1 f16-3 e16
     d16 | % 12
-    c8 c8 e16 d16 c16 d16 e4 r8 e'8-4 | % 13
-    e8-3 e8-2 e8-1 fis16 gis16 a8-1 c4 ( -> -3 a8 ) | % 14
-    b8 -2 e4 ( -> b8 ) c16 d16 c16 b16 a8 c16 b16 | % 15
-    a16 g16 -4 fis16 e16 d16 e16 f16 -3 fis16 -4 g8 -1 b4 ( -> g8
-    ) |
+    c8 ) \st c8 \st e16 ( d16 c16 d16 e4 ) \st r8 e'8-4 \st\p | % 13
+    e8-3 \st e8-2 \st e8-1 ( fis16 gis16 a8-1 \st ) c4 ( -> -3 a8 | % 14
+    b8-2 \st ) e4 ( -> b8 c16 d16 c16 b16 a8 \st ) c16-4 ( b16 | % 15
+    a16 g16-1 fis16-3 e16 d16-1 e16 f16-3 fis16-4 g8-5 \st ) b4-3 ( -> g8 | % 16
     %% 17
-    a8 d4 ( -> a8 ) b16 c16 b16 a16 g8 b16 -3 a16 |
+    a8 \st ) d4 ( -> a8 b16-2 c16 b16 a16 g8 \st ) b16-3 a16 |
     %% 18
-    g16 -\f fis16 -3 e16 d16 cis16 -2 d16 e16 d16 c16 -2 b16 -1
-    a16 -4 g16 fis16 g16 a16 g16 |
+    g16-1 \f fis16-3 e16 d16-1 cis16-2 d16 e16 d16 c16-2 b16-1
+    a16-4 g16 fis16 g16 a16 g16 |
     %% 19
-    fis16 e16 dis16-2 e16-1 fis16 gis16 a16-1 b16
-    c16 b16 a16 gis16 -2 a16 -1 b16 c16 d16 |
+    fis16-2 ( e16-1 dis16-2 e16-1 fis16 \cresc gis16 a16-1 b16
+    c16 b16 a16-1 gis16-2 a16-3 b16-1 c16 d16 |
     \barNumberCheck #20
-    e16 d16 c16 b16 c16 b16 a16 g16
-    fis16 g16 a16 b16 c16 d16 e16 fis16 |
+    e16-4 d16 c16 b16-1 c16-4 b16 a16 g16-1
+    fis16-2 g16-1 a16 b16 c16-1 d16 e16 fis16 |
     %% 21
-    g4 <b, d g>4 <b d g>4 <b, g'>8 -\p <c a'>8 |
+    g4 \st ) <b, d g>4 \st\ff <b d g>4 \st <b,^1 g'^5>8 \p\st <c a'>8 \st |
     %% 22
-    <d b'>2 ~ <d b'>8 <b g'>8 <c a'>8 <d b'>8 |
+    <d b'>2 ~ <d b'>8 <b-1 g'-5>8 \st <c a'>8 \st <d b'>8 \st |
     %% 23
-    <e c'>2 ~ <e c'>8 <c a'>8 <d b'>8 <e c'>8 |
+    <e c'>2 ~ <e c'>8 \cresc <c-1 a'-5>8 \st <d b'>8 \st <e c'>8 \st \!|
     %% 24
-    <f d'>2 ~ <f d'>8 <d b'>8 <e c'>8 <f d'>8 |
+    <f d'>2 -> ~ <f d'>8 <d-1 b'-5>8 \st <e c'>8 \st <f d'>8 \st |
     %% 25
-    <g e'>2. ~ <g e'>8 r8 } |
-  \repeat volta 2 {
+    <g e'>2. \sf ~ <g e'>8 r8 |
+  }
+  \repeat volta 2
+  {
     %% 26
     s8*5 <e c'>8 <f d'>8 <g e'>8 |
     %% 27
@@ -175,43 +194,45 @@ MvtOneUpper =  \relative e' {
     %% 57
     c8 e16 g16 c16 e16 c16 g16 e16 c'16 g16 e16 c16 g'16 e16 c16 |
     %% 58
-    g8 r8 r4 r8 <c e>8 \staccato <d f>8 \staccato <b d>8 \staccato |
+    g8 r8 r4 r8 <c e>8 \st <d f>8 \st <b d>8 \st |
     \alternative {
       { c4 <e, g c>4 <e g c>8 r8 s4 }
       { \barNumberCheck #60 c'4 <e, g c>4 <e g c>4 r4 }} \bar "|."
   }
 }
-MvtTwoUpper =  \relative c' {
+MvtTwoUpper =  \relative c'
+{
+  %% \set fingeringOrientations = #'(up)
   \mark "Allegretto grazioso."
   \clef "treble" \time 2/4 \key c \major |
   %% 1
-  s4. fis'16 ( -2 g16 | a8 ) g8 \staccato f8 \staccato e8 \staccato cis4 ( -2 d8 )
-  -1 e16 ( f16 g8 ) f8 \staccato e8 \staccato d8 \staccato d16 ( -3 c16 b16 c16 e8 ) c'16 (
-  -3 d16 e8 ) d8 \staccato c8 \staccato b8 \staccato \grace { a32 ( b32 ) } c8 \staccato b8 \staccato a8
-  \staccato g8 \staccato -3 fis16 -2 g16 a16 fis16 d16 e16 fis16 d16 g8 \staccato -4 -\<
-  fis16 ( -2 g16 fis16 g16 fis16 g16 a8 ) -\! g8 \staccato f8 \staccato e8 \staccato cis4 (
-  d8 ) e16 ( f16 g8 ) f8 \staccato e8 \staccato d8 \staccato d16 ( c16 b16 c16 e8 ) c'16 -3
+  s4. fis'16 ( -2 g16 | a8 ) g8 \st f8 \st e8 \st cis4 ( -2 d8 )
+  -1 e16 ( f16 g8 ) f8 \st e8 \st d8 \st d16 ( -3 c16 b16 c16 e8 ) c'16 (
+  -3 d16 e8 ) d8 \st c8 \st b8 \st \grace { a32 ( b32 ) } c8 \st b8 \st a8
+  \st g8 \st -3 fis16 -2 g16 a16 fis16 d16 e16 fis16 d16 g8 \st -4 -\<
+  fis16 ( -2 g16 fis16 g16 fis16 g16 a8 ) -\! g8 \st f8 \st e8 \st cis4 (
+  d8 ) e16 ( f16 g8 ) f8 \st e8 \st d8 \st d16 ( c16 b16 c16 e8 ) c'16 -3
   -\mf d16 e16 d16 c16 b16 a16 g16 -4 f16 e16 d16 gis16 a16 g16 f16 e16
   d16 -1 c16 -2 b8 -1 <b g'>8 <b g'>8 <b g'>8 c8 -2 g16 -1 a16 b16 c16
   -1 d16 e16 \repeat volta 2 {
-    f8 \staccato -4 -\p g16 ( f16 e8 ) \staccato f16 ( e16 d8 ) \staccato e16 ( d16 c8 )
-    \staccato d16 ( -3 c16 b2 ) d16 ( c16 b16 c16 e8 ) -4 bes'16 ( -4 a16 g8
-    ) \staccato a16 ( -3 g16 f8 ) \staccato g16 ( -4 f16 e8 ) \staccato f16 ( -3 e16 d8 )
-    \staccato e16 ( -4 d16 cis2 ) e16 -4 d16 cis16 d16 f8 -4 a'16 ( -5 g16
+    f8 \st -4 -\p g16 ( f16 e8 ) \st f16 ( e16 d8 ) \st e16 ( d16 c8 )
+    \st d16 ( -3 c16 b2 ) d16 ( c16 b16 c16 e8 ) -4 bes'16 ( -4 a16 g8
+    ) \st a16 ( -3 g16 f8 ) \st g16 ( -4 f16 e8 ) \st f16 ( -3 e16 d8 )
+    \st e16 ( -4 d16 cis2 ) e16 -4 d16 cis16 d16 f8 -4 a'16 ( -5 g16
     f8 ) r8 r8 f16 ( -4 e16 d8 ) r8 r8 d16 ( c16 b8 ) r8 r8 b16 ( a16
-    g8 ) r8 r8 fis16 ( g16 a8 ) g8 \staccato f8 \staccato e8 \staccato cis4 ( d8 ) e16 (
-    f16 g8 ) f8 \staccato e8 \staccato d8 \staccato d16 ( c16 b16 c16 e8 ) c'16 \mf d16
+    g8 ) r8 r8 fis16 ( g16 a8 ) g8 \st f8 \st e8 \st cis4 ( d8 ) e16 (
+    f16 g8 ) f8 \st e8 \st d8 \st d16 ( c16 b16 c16 e8 ) c'16 \mf d16
     e16 d16 c16 b16 a16 g16 f16 e16 d16 gis16 a16 g16 f16 e16 d16 c16
     b8 <b g'>8 <b g'>8 <b g'>8 }
   \alternative { {c8 g16 a16 b16 c16 d16 e16 }
                  {c8 e8 -3 e8 e8 }}
   f16 -\p e16 dis16 e16 -1 a8 -4 e8 c'4. ( -5 b8 ) \acciaccatura
-  { b8 } a8 \staccato gis8 \staccato a8 \staccato c8 \staccato e,4. e8 -3 f16 ( e16 dis16 e16 ) a8
-  \staccato a8 \staccato a8 \staccato g4 ( -> f8 ) e8 -1 -\! e8 e16 -3 d16 c16 d16 e4. e8
-  f16 ( e16 dis16 e16 ) -1 a8 \staccato -2 c8 \staccato -4 e4. -5 e,8 f16 ( e16 dis16
-  e16 ) a8 \staccato c8 \staccato e2 ~ e4. e,8 f16 ( e16 dis16 e16 ) a8 \staccato -4 e8 \staccato
-  -1 c'4. ( -5 b8 ) \acciaccatura { b8 } a8 \staccato gis8 \staccato a8 \staccato c8 \staccato e,4.
-  e8 -3 f16 ( e16 dis16 e16 ) a8 \staccato c8 \staccato e4. c16 a16 e8 e8 b'8 -3 b16
+  { b8 } a8 \st gis8 \st a8 \st c8 \st e,4. e8 -3 f16 ( e16 dis16 e16 ) a8
+  \st a8 \st a8 \st g4 ( -> f8 ) e8 -1 -\! e8 e16 -3 d16 c16 d16 e4. e8
+  f16 ( e16 dis16 e16 ) -1 a8 \st -2 c8 \st -4 e4. -5 e,8 f16 ( e16 dis16
+  e16 ) a8 \st c8 \st e2 ~ e4. e,8 f16 ( e16 dis16 e16 ) a8 \st -4 e8 \st
+  -1 c'4. ( -5 b8 ) \acciaccatura { b8 } a8 \st gis8 \st a8 \st c8 \st e,4.
+  e8 -3 f16 ( e16 dis16 e16 ) a8 \st c8 \st e4. c16 a16 e8 e8 b'8 -3 b16
   ( c16 ) a8 a16 c16 b16 -\mf a16 g16 f16 -3 e8 <d-2 e-3>8 <d e>8 <d
                                                                    e>8 |
   %% 61
@@ -233,15 +254,15 @@ MvtTwoUpper =  \relative c' {
   f16 ( -4 e16 dis16 e16 a8 ) e8 |
   %% 69
   c'4. ( b8 ) | \barNumberCheck #70
-  \acciaccatura { b8 } a8 \staccato gis8 \staccato a8 \staccato c8 \staccato |
+  \acciaccatura { b8 } a8 \st gis8 \st a8 \st c8 \st |
   %% 71
   e,4. e8 |
   %% 72
-  f16 ( e16 dis16 e16 a8 ) \staccato c8 \staccato |
+  f16 ( e16 dis16 e16 a8 ) \st c8 \st |
   %% 73
   e4. c16 a16 |
   %% 74
-  e8 e8 b'8 \staccato b16 ( c16 ) |
+  e8 e8 b'8 \st b16 ( c16 ) |
   %% 75
   a8 a16 ( -\mf c16 ) b16 a16 g16 f16 |
   %% 76
@@ -261,26 +282,26 @@ MvtTwoUpper =  \relative c' {
   %% 83
   d8 d16 -1 e16 f8 fis16 ( -2 g16 |
   %% 84
-  a8 ) g8 \staccato f8 \staccato e8 \staccato |
+  a8 ) g8 \st f8 \st e8 \st |
   %% 85
   cis4 ( -2 d8 ) -1 e16 ( f16 |
   %% 86
-  g8 ) f8 \staccato e8 \staccato d8 \staccato |
+  g8 ) f8 \st e8 \st d8 \st |
   %% 87
   d16 ( c16 b16 c16 e8 ) c'16 ( d16 |
   %% 88
-  e8 ) d8 \staccato c8 \staccato b8 \staccato |
+  e8 ) d8 \st c8 \st b8 \st |
   %% 89
-  \grace { a32 ( b32 ) } c8 \staccato b8 \staccato a8 \staccato g8 \staccato | \barNumberCheck #90
+  \grace { a32 ( b32 ) } c8 \st b8 \st a8 \st g8 \st | \barNumberCheck #90
   fis16 g16 a16 fis16 d16 e16 fis16 d16 |
   %% 91
   g8 fis16 -\< g16 fis16 g16 fis16 g16 |
   %% 92
-  a8 \staccato -\! g8 \staccato f8 \staccato e8 \staccato |
+  a8 \st -\! g8 \st f8 \st e8 \st |
   %% 93
   cis4 ( d8 ) e16 ( f16 |
   %% 94
-  g8 ) f8 \staccato e8 \staccato d8 \staccato |
+  g8 ) f8 \st e8 \st d8 \st |
   %% 95
   d16 ( c16 b16 c16 e8 ) c'16 -\mf d16 |
   %% 96
@@ -291,17 +312,17 @@ MvtTwoUpper =  \relative c' {
   b8 <b g'>8 <b g'>8 <b g'>8 |
   %% 99
   c8 g16 a16 b16 c16 d16 e16 | \barNumberCheck #100
-  f8 \staccato -\p g16 ( f16 e8 ) \staccato f16 ( e16 |
+  f8 \st -\p g16 ( f16 e8 ) \st f16 ( e16 |
   %% 101
-  d8 ) \staccato e16 ( d16 c8 ) \staccato d16 ( c16 |
+  d8 ) \st e16 ( d16 c8 ) \st d16 ( c16 |
   %% 102
   b2 ) |
   %% 103
   d16 ( c16 b16 c16 e8 ) bes'16 ( a16 |
   %% 104
-  g8 ) \staccato a16 ( g16 f8 ) \staccato g16 ( f16 |
+  g8 ) \st a16 ( g16 f8 ) \st g16 ( f16 |
   %% 105
-  e8 ) \staccato f16 ( e16 d8 ) \staccato e16 ( d16 |
+  e8 ) \st f16 ( e16 d8 ) \st e16 ( d16 |
   %% 106
   cis2 ) |
   %% 107
@@ -314,11 +335,11 @@ MvtTwoUpper =  \relative c' {
   %% 111
   g8 ) r8 r8 fis16 ( g16 |
   %% 112
-  a8 ) g8 \staccato f8 \staccato e8 \staccato |
+  a8 ) g8 \st f8 \st e8 \st |
   %% 113
   cis4 ( d8 ) e16 ( f16 |
   %% 114
-  g8 ) f8 \staccato e8 \staccato d8 \staccato |
+  g8 ) f8 \st e8 \st d8 \st |
   %% 115
   d16 c16 b16 c16 e8 c'16 -\mf d16 |
   %% 116
@@ -338,58 +359,60 @@ MvtTwoUpper =  \relative c' {
   c8 r8 \bar "|."
 }
 
-MvtOneLower =  \relative c' {
+MvtOneLower =  \relative c'
+{
+  %% \set fingeringOrientations = #'(down)
   \repeat volta 2 {
     \clef "bass" \time 4/4 \key c \major |
     %% 1
     s8*5 r4.|
     %% 2
-    r8 c8 c8 r8 r8 c8 c8 r8 |
+    r8 c8-1 \st c8-2 \st r8 r8 c8-1 \st c8-2 \st r8 |
     %% 3
-    r8 c8 c8 r8 r8 c8 c8 r8 |
+    r8 c8-1 \st c8-2 \st r8 r8 c8-1 \st c8-2 \st r8 |
     %% 4
-    <g-5 d'-2>2 ( <c e>4 ) r8 <c e>8 |
+    <g-5 d'-2>2 -> ( <c-3 e-1>4. ) <c-3 e-1>8 |
     %% 5
-    <g d'>8 <c e>8 <g d'>8 <c e>8 <g d'>4 r4 |
+    <g d'>8 \st <c e>8 \st <g d'>8 \st <c e>8 \st <g d'>4 \st r4 |
     %% 6
-    \clef "treble" r8 g'8 g8 r8 r8 <f g>8 <f g>8 r8 |
+    \clef "treble" r8 g'8-1 \st g8-2 \st r8 r8 <f-2 g-1>8 \st <f g>8 \st r8 |
     %% 7
     r8 <e g>8 <e g>8 r8 r8 <a, g'>8 <a g'>8 r8 |
     %% 8
-    <d f>4 r4 \clef "bass" <g, d' f>2 ( -> |
+    <d-3 f-1>4 r4 \clef "bass" <g, d' f>2 ( -> |
     %% 9
-    <c e>8 ) <g d'>8 <c e>8 <g d'>8 <c e>4 r4 | \barNumberCheck
+    <c-3 e-1>8 \st ) <g-5 d'-2>8 \st <c-3 e-1>8 \st <g d'>8 \st <c e>4 r4 | \barNumberCheck
     #10
-    <c, e g>1 ( |
+    <c, e g>1 \f\> ( |
     %% 11
-    <d f g>4 ) <c e g>4 <b f' g>4 r4 |
+    <d_4 f g>4 ) \!\st <c_5 e g>4 \st <b f' g>4 \st r4 |
     %% 12
-    <b f' g>1 |
+    <b f' g>1 \f\> ( |
     %% 13
-    <c e g>4 <b f' g>4 <c e g>4 r4 |
+    <c_4 e g>4 )\! \st <b f' g>4 \st <c_4 e g>4 \st r4 |
     %% 14
-    c'8 -3 e8 <b d>8 e8 <a, c>8 e'8 <a, c>8 e'8 |
+    c'8 -3 \pp ( e8 <b d>8 e8 <a, c>8 e'8 <a, c>8 e'8 )( |
     %% 15
-    <gis, d'>8 e'8 <gis, d'>8 e'8 <a, c>8 e'8 <a, c>8 e'8 |
+    <gis, d'>8 )_\legato e'8 <gis, d'>8 e'8 <a,_4 c>8 e'8 <a, c>8 e'8 ( |
     %% 16
-    <a, c>8 d8 <a c>8 d8 <g, b>8 d'8 <g, b>8 d'8 |
+    <a, c>8 ) d8 <a c>8 d8 <g, b>8 d'8 <g, b>8 d'8 ( |
     %% 17
-    <fis, c'>8 d'8 <fis, c'>8 d'8 <g, b>8 d'8 <g, b>8 d'8 |
+    <fis, c'>8 )( d'8 <fis, c'>8 d'8 <g,_5 b>8 d'8 <g, b>8 d'8 \st ) |
     %% 18
-    <g, b>1 ( |
+    <g,-4 b-2>1 \sf ( |
     %% 19
     c1 ) | \barNumberCheck #20
-    r4 <d, a' c>4 <d a' c>4 <d a' c>4 |
+    r4 <d, a' c>4 \st <d a' c>4 \st <d a' c>4 \st |
     %% 21
-    <g b>4 g4 -1 g,4 r4 |
+    <g b>4 \st g4 \st g,4 \st r4 |
     %% 22
-    r8 g8 -5 b8 -4 d8 -2 g4 r4 |
+    r8 g8-5 \st b8-4 \st d8-2 \st g4 r4 |
     %% 23
-    r8 g,8 -5 c8 -3 e8 -1 g4 r4 |
+    r8 g,8-5 \st c8-3 \st e8-2 \st g4 r4 |
     %% 24
-    r8 g,8 b8 d8 g4 r4 |
+    r8 g,8-5 \st b8-4 \st d8-2 \st g4 r4 |
     %% 25
-    r16 c,16 -5 d16 e16 f16 g16 -1 a16 -3 b16 c8 r8 r4 }
+    r16 c,16-5 \f ( \< d16 e16 f16 g16-1 a16-3 b16 c8 )\! r8 r4 }
   \repeat volta 2 {
     |
     %% 26
@@ -457,21 +480,23 @@ MvtOneLower =  \relative c' {
     %% 57
     c,4 r4 r2 |
     %% 58
-    r16 g16 a16 b16 c16 d16 e16 f16 g8 g8 \staccato g8 \staccato g8 \staccato |
+    r16 g16 a16 b16 c16 d16 e16 f16 g8 g8 \st g8 \st g8 \st |
     \alternative {
       { c,4 c4 c,8 r8 s4 }
       { \barNumberCheck #60 c'4 c4 c,4 r4 }
     } \bar "|."
   }
 }
-MvtTwoLower =  \relative c {
+MvtTwoLower =  \relative c
+{
+  %% \set fingeringOrientations = #'(down)
   \clef "bass" \time 2/4 \key c \major | s4. r8 |
-  \clef "treble" r8 <c'-3 e-5>8\staccato <d-4 f-2>8\staccato <e-3 g-1>8 \staccato
+  \clef "treble" r8 <c'-3 e-5>8\st <d-4 f-2>8\st <e-3 g-1>8 \st
   <f-4 a-2>4 ~ <f a>8 r8 \clef "bass" r8 <g, b f'>8 <g b f'>8 <g b f'>8
   <c e>4 r4 r4 r4 \clef "treble" \grace { c'32 ( -3 d32 ) } e8
-  \staccato d8 \staccato c8 \staccato b8 \staccato a8 \staccato r8 <d, a' c>4 ( <g b>8 ) r8 r4 r8 <c, e>8
-  \staccato <d f>8 \staccato <e g>8 \staccato <f a>4. r8 \clef "bass" r8 <g, b f'>8 <g b f'>8
-  <g b f'>8 <c e>4 r4 r8 <c, e>8 \staccato <d f>8 \staccato <e g>8 \staccato <f a>8
+  \st d8 \st c8 \st b8 \st a8 \st r8 <d, a' c>4 ( <g b>8 ) r8 r4 r8 <c, e>8
+  \st <d f>8 \st <e g>8 \st <f a>4. r8 \clef "bass" r8 <g, b f'>8 <g b f'>8
+  <g b f'>8 <c e>4 r4 r8 <c, e>8 \st <d f>8 \st <e g>8 \st <f a>8
   <f a>8 <f a>8 r8 r8 <g d' f>8 <g d' f>8 <g d' f>8 <c e>4 r4
   \repeat volta 2 {
     <g b>8 r8 <g a c>8 r8 <g b d>8 r8 <g c e>8 r8 <g d' f>2 <c e>4 r4
@@ -479,8 +504,8 @@ MvtTwoLower =  \relative c {
                                                                  f>4 r4 r8 <g, b d f>8 <g b d f>8 r8 r8 <g b d f>8 <g b d f>8
     r8 r8 <g b d f>8 <g b d f>8 r8 r8 <g b d f>8 <g b d f>8 r8 \clef
     "treble" r8 <c e>8 <d f>8 <e g>8 <f a>4 ~ -> ~ <f a>8 r8 \clef
-    "bass" r8 <g, b f'>8 <g b f'>8 <g b f'>8 <c e>4 r4 r8 <c, e>8 \staccato
-    <d f>8 \staccato <e g>8 \staccato <f a>8 <f a>8 <f a>8 r8 r8 <g d' f>8 <g d' f>8 <g d' f>8 }
+    "bass" r8 <g, b f'>8 <g b f'>8 <g b f'>8 <c e>4 r4 r8 <c, e>8 \st
+    <d f>8 \st <e g>8 \st <f a>8 <f a>8 <f a>8 r8 r8 <g d' f>8 <g d' f>8 <g d' f>8 }
   \alternative { {
     <c e>4 r4 }
                  {
@@ -540,7 +565,7 @@ MvtTwoLower =  \relative c {
   %% 83
   <g b d>8 r8 r4 |
   %% 84
-  \clef "treble" r8 <c e>8 \staccato <d f>8 \staccato <e g>8 \staccato |
+  \clef "treble" r8 <c e>8 \st <d f>8 \st <e g>8 \st |
   %% 85
   <f a>4. r8 |
   %% 86
@@ -550,13 +575,13 @@ MvtTwoLower =  \relative c {
   %% 88
   r4 r4 |
   %% 89
-  \clef "treble" \grace { c'32 ( d32 ) } e8 \staccato d8 \staccato c8 \staccato b8 \staccato |
+  \clef "treble" \grace { c'32 ( d32 ) } e8 \st d8 \st c8 \st b8 \st |
   \barNumberCheck #90
   a8 r8 <d, a' c>4 |
   %% 91
   <g b>8 r8 r4 |
   %% 92
-  r8 <c, e>8 \staccato <d f>8 \staccato <e g>8 \staccato |
+  r8 <c, e>8 \st <d f>8 \st <e g>8 \st |
   %% 93
   <f a>4. r8 |
   %% 94
@@ -564,7 +589,7 @@ MvtTwoLower =  \relative c {
   %% 95
   <c e>4 r4 |
   %% 96
-  r8 <c, e>8 \staccato <d f>8 \staccato <e g>8 \staccato |
+  r8 <c, e>8 \st <d f>8 \st <e g>8 \st |
   %% 97
   <f a>8 <f a>8 <f a>8 r8 |
   %% 98
@@ -594,7 +619,7 @@ MvtTwoLower =  \relative c {
   %% 111
   r8 <g b d f>8 <g b d f>8 r8 |
   %% 112
-  \clef "treble" r8 <c e>8 \staccato <d f>8 \staccato <e g>8 \staccato |
+  \clef "treble" r8 <c e>8 \st <d f>8 \st <e g>8 \st |
   %% 113
   <f a>4 ~ <f a>8 r8 |
   %% 114
@@ -618,15 +643,22 @@ MvtTwoLower =  \relative c {
   <c e>8 r8 \bar "|."
 }
 
-
 %% The score definition
 \score {
   \new PianoStaff \with { instrumentName = "Piano" }
   <<
-    \new Staff = "upper" \MvtOneUpper
     \accidentalStyle Score.piano-cautionary
+    \new Staff = "upper" \MvtOneUpper
     \new Staff = "lower" \MvtOneLower
   >>
+  \layout {
+    \context {
+      \Score
+      % \override Fingering.staff-padding = #'()
+      % \override Fingering.add-stem-support = ##f
+    }
+  }
+
 }
 
 \score {
