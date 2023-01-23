@@ -4,6 +4,13 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
+      - name: Enable proposed source
+        run: |
+          cat <<EOF >/etc/apt/sources.list.d/ubuntu-$(lsb_release -cs)-proposed.list
+          # Enable Ubuntu proposed archive
+          deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-proposed restricted main multiverse universe
+          EOF
+
       - name: Install Lilypond
         run: sudo apt-get install -y lilypond
       - name: Download font
