@@ -4,20 +4,43 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Enable proposed source
-        run: |
-          cat <<EOF >/etc/apt/sources.list.d/ubuntu-$(lsb_release -cs)-proposed.list
-          # Enable Ubuntu proposed archive
-          deb http://archive.ubuntu.com/ubuntu/ $(lsb_release -cs)-proposed restricted main multiverse universe
-          EOF
-
-      - name: Install Lilypond
-        run: sudo apt-get install -y lilypond
       - name: Download font
         run: "mkdir -pv ~/.fonts && wget -P ~/.fonts/ https://github.com/adobe-fonts/source-han-serif/releases/download/2.001R/01_SourceHanSerif.ttc.zip"
       - name: Extract font
         run: "pushd ~/.fonts && unzip 01_SourceHanSerif.ttc.zip && popd"
 
       - uses: actions/checkout@v3
+      - name: Download Lilypond
+        run: "wget https://gitlab.com/lilypond/lilypond/-/releases/v2.24.0/downloads/lilypond-2.24.0-linux-x86_64.tar.gz"
+      - name: Extract Lilypond
+        run: "tar -xf lilypond-2.24.0-linux-x86_64.tar.gz"
       - name: Build sheets
-        run: "bash make-all.sh"
+        run: 'env PATH=$PWD/lilypond-2.24.0/bin:$PATH bash make-all.sh'
+      - name: Pack sheets
+        run: "mkdir -pv sheets && mv **/*.pdf sheets/ && tar -cvJf sheets.tar.xz sheets"
+
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
+
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./sheets.tar.xz
+          asset_name: sheets.tar.xz
+          asset_content_type: application/x-tar
+
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
