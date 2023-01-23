@@ -124,81 +124,80 @@ MvtOneUpper =  \relative e'
   \repeat volta 2
   {
     %% 26
-    s8*5 <e c'>8 <f d'>8 <g e'>8 |
+    s8*5 <e-1 c'-5>8 \st _\dolce <f d'>8 \st <g e'>8 \st |
     %% 27
-    <a f'>4. <g e'>8 <f d'>4. <fis dis'>8 |
+    <a f'>4.-> <g e'>8 \st <f d'>4. <fis dis'-4>8 \st |
     %% 28
-    <g e'>2 ~ <g e'>8 <gis-2 e'-5>8  <a-1 e'-5>8 <ais-2 e'-5>8 |
+    <g e'>2-> ~ <g e'>8 \st <gis-2 e'-5>8  <a-1 e'-5>8 <ais-2 e'-5>8 |
     %% 29
-    <b-1 e-5>4. <b-1 e-3>8 <dis-2 fis-4>4. <dis fis>8 |
+    <b-1 e-4>4.-> <b-1 e-3>8 \st <dis-2 fis-4>4. <dis fis>8 \st |
     \barNumberCheck #30
-    <e g>2 ~ <e g>8 <b g'>8 <c g'>8 <cis g'>8 |
+    <e g>2-> ~ <e g>8 \st <b-1 g'-5>8 \st <c-1 g'-5>8 \st <cis-2 g'-5>8 \st |
     %% 31
-    <d g>4. <d g>8 <fis a>4. <fis a>8 |
+    <d-1 g-4>4.-> _\markup{\italic{poco a poco cresc.}} <d-1 g-3>8 \st <fis-2 a-4>4. <fis a>8 \st |
     %% 32
-    <g b>2 ~ <g b>8 <g-1 b-2>8 <a-1 c-3>8 <ais-2 cis-4>8 |
+    <g b>2-> ~ <g b>8 \st <g-1 b-2>8 \st <a-1 c-3>8 \st <ais-2 cis-4>8 |
     %% 33
-    <b-5 d-3>2 ~ <b d>8 <b d>8 <c es>8 <cis e>8 |
+    <b-3 d-5>2-> ~ <b d>8 \st <b-1 d-2>8 \st <c-1 es-3>8 \st <cis e>8 \st |
     %% 34
-    <d f>2 ~ <d f>8 <c e>8 <b d>8 <a-2 c-4>8 |
+    <d f>2->\sf ~ <d f>8 \st <c e>8 \st <b d>8 \st <a-2 c-4>8 \st |
     %% 35
-    <g b>8 -> r8 <f-2 a-4>8 r8 <e g>8 r8 <dis-2 fis-4>8 r8 |
+    <g b>8\dim \st r8 <f-2 a-4>8 \st r8 <e g>8 \st r8 <dis-2 fis-4>8 \st r8 |
     %% 36
-    <d-1 f-3>4 -\! -\p r4 <cis-2 e-4>4 r4 |
+    <d f>4 \p r4 <cis-2 e-4>4 r4 |
     %% 37
-    <d f>4 r4 <b d>4 r4 |
+    <d-3 f-5>4 r4 <b d>4 r4 |
     %% 38
-    c'8 -\f b16 a16 g16 f16 e16 d16 c16 b16 a16 g16 f16 e16 d16
+    c'8 \sf \> ( b16 a16 g16 f16 e16 d16 c16 b16 a16 g16 f16 e16 d16
     c16 |
     %% 39
-    b8 -\p b8 d16 c16 b16 c16 d4 r4 | \barNumberCheck #40
-    d''8 -\f c16 b16 a16 g16 f16 e16 d16 c16 b16 a16 g16 f16 e16
+    b8-2 \p ) \st b8-1 \st d16 ( c16 b16 c16 d4 \st ) r4 |
+    \barNumberCheck #40
+    d''8 \sf \> ( c16 b16 a16 g16 f16 e16 d16 c16 b16 a16 g16 f16 e16
     d16 |
     %% 41
-    c8 -\p c8 e16 d16 c16 d16 e4 r8 e'8 |
+    c8-2 \p \st ) c8-1 \st e16 ( d16 c16 d16 e4 ) \st r8 e'8-4 \st \p |
     %% 42
-    e8 e8 e8 fis16 gis16 a8 c4 ( -> a8 ) |
+    e8-3 \st e8-2 \st e8-1 ( fis16 gis16 a8-4 \st ) c4-3 ( -> a8 |
     %% 43
-    b8 e4 ( -> b8 ) c16 d16 c16 b16 a8 c8 |
+    b8 \st ) e4 ( -> b8-2 c16 d16 c16 b16 a8 )\st c8-5 -> ( |
     %% 44
-    c,8 c8 c8 d16 e16 f8 a4 ( f8 ) |
+    c,8 \st ) c8-2 \st c8-1 ( d16 e16 f8-4 \st ) a4-3-> ( f8 |
     %% 45
-    g8 c4 ( g8 ) a16 bes16 a16 g16 f8 r8 |
+    g8 \st ) c4 -> ( g8-2 a16 bes16 a16 g16 f8 \st ) r8 |
     %% 46
-    r8 d'4 ( a8 ) b16 c16 b16 a16 g8 r8 |
+    r8 d'4 -> ( a8 b16 c16 b16 a16 g8 \st ) r8 |
     %% 47
-    r8 g'4 ( d8 ) e16 f16 e16 d16 c8 e16 -3 d16 |
+    r8 g'4 -> ( d8 e16-4 f16 e16 d16 c8 \st ) e16-3-> ( d16 |
     %% 48
-    c16 -\f b16 -3 a16 g16 fis16 -2 g16 a16 g16 f16 -2 e16 -1 d16
-    -4 c16 b16 c16 d16 c16 |
+    c16-1 \f b16-3 a16 g16-1 fis16-2 g16 a16 g16 f16 e16-1 d16-4 c16 b16 c16 d16 c16 |
     %% 49
-    b16 a16 gis16 -2 a16 -1 b16 cis16 d16 -1 e16 f16 e16 d16 cis16
-    -2 d16 e16 f16 g16 | \barNumberCheck #50
-    a16 g16 f16 e16 f16 e16 d16 c16 -3 b16 c16 -1 d16 e16 f16 -1
-    g16 a16 b16 |
+    b16-2 a16-1 gis16-2 a16-1 b16 \cresc cis16 d16-1 e16 f16-3-> e16 d16-1 cis16-2
+    d16-3 e16-1 f16 g16 |
+    \barNumberCheck #50
+    a16-> g16 f16 e16-1 f16-4-> e16 d16 c16-1 b16-2 c16-1 d16 e16 f16-1 g16 a16 b16 |
     %% 51
-    c4 <g-1 d'-4>4 -\sf <g e'>4 -\sf r8 g'16 f16 |
+    c4-5 \ff \st ) <g-1 d'-4>4 \st \sf <g e'>4 \st \sf r8 g'16-5-> ( f16 |
     %% 52
-    e16 d16 c16 b16 -2 c16 d16 e16 d16 c16 b16 a16 -1 g16 -3 fis16
-    g16 a16 g16 |
+    e16 \f d16 c16-1 b16-2 c16-1 d16 e16 d16 c16-1 b16-3 a16 g16-1 fis16-2 g16 a16 g16 |
     %% 53
-    f16 -2 e16 -1 d16 -3 cis16 -2 d16 e16 f16 e16 d16 e16 -4 c16
-    d16 b16 -1 c16 -4 a16 b16 |
+    f16 e16 d16-3 cis16-2 d16-1 e16 f16 e16 d16-1 e16-4 c16
+    d16 b16-1 c16-4 a16 b16 |
     %% 54
-    g8 r8 r4 r8 <c-2 e-4>8 <d f>8 <b d>8 |
+    g8 \st ) r8 r4 r8 <c-2 e-4>8 \st <d f>8 \st <b d>8 \st |
     %% 55
-    c8 e16 -1 g16 -2 c16 -4 e16 -5 c16 g16 e16 c'16 -5 g16 -3 e16
-    -2 c16 -1 g'16 -5 e16 -4 c16 -2 |
+    c8 \st e16-1 ( g16-2 c16-4 e16-5 c16-4 g16-2 e16-1 c'16-5 g16-3 e16-2
+    c16 -1 g'16 -5 e16 -4 c16 -2 |
     %% 56
-    g8 -1 r8 r4 r8 <c e>8 <d f>8 <b d>8 |
+    g8 \st ) r8 r4 r8 <c-2 e-4>8 \st <d f>8 \st <b d>8 \st |
     %% 57
-    c8 e16 g16 c16 e16 c16 g16 e16 c'16 g16 e16 c16 g'16 e16 c16 |
+    c8 e16-1 ( g16-2 c16-4 e16-5 c16-4 g16-2 e16-1 c'16-5 g16-3 e16-2 c16-1 g'16-5 e16-4 c16-2 |
     %% 58
-    g8 r8 r4 r8 <c e>8 \st <d f>8 \st <b d>8 \st |
+    g8 \st ) r8 r4 r8 <c-2 e-4>8 \st <d f>8 \st <b d>8 \st |
+    }
     \alternative {
-      { c4 <e, g c>4 <e g c>8 r8 s4 }
-      { \barNumberCheck #60 c'4 <e, g c>4 <e g c>4 r4 }} \bar "|."
-  }
+      { c4 \st <e, g c>4 \st <e g c>8 \st s8 s4 }
+      { \barNumberCheck #60 c'4 \st <e, g c>4 \st <e g c>4 \st r4 }} \bar "|."
 }
 MvtTwoUpper =  \relative c'
 {
@@ -383,11 +382,11 @@ MvtOneLower =  \relative c'
     %% 9
     <c-3 e-1>8 \st ) <g-5 d'-2>8 \st <c-3 e-1>8 \st <g d'>8 \st <c e>4 r4 | \barNumberCheck
     #10
-    <c, e g>1 \f\> ( |
+    <c, e g>1 \f\>_( |
     %% 11
     <d_4 f g>4 ) \!\st <c_5 e g>4 \st <b f' g>4 \st r4 |
     %% 12
-    <b f' g>1 \f\> ( |
+    <b f' g>1 \f\>_( |
     %% 13
     <c_4 e g>4 )\! \st <b f' g>4 \st <c_4 e g>4 \st r4 |
     %% 14
@@ -418,74 +417,74 @@ MvtOneLower =  \relative c'
     %% 26
     s8*5 r4. |
     %% 27
-    r8 c8 c8 r8 r8 c8 c8 r8 |
+    r8 c8-1 \st c8-2 \st r8 r8 c8-1\st c8-2\st r8 |
     %% 28
-    r16 c,16 d16 e16 f16 g16 a16 b16 c8 r8 r4 |
+    r16 c,16 \<( d16 e16 f16 g16-1 a16-3 b16 c8\st\! ) r8 r4 |
     %% 29
-    r8 b,8 b8 r8 r8 b'8 b8 r8 | \barNumberCheck #30
-    r16 e,16 -5 fis16 g16 a16 b16 -1 cis16 -3 dis16 -2 e8 r8 r4
+    r8 b,8-5 \st b8-4 \st r8 r8 b'8-1 \st b8-2 \st r8 | \barNumberCheck #30
+    r16 e,16-4 \< ( fis16 g16 a16-1 b16-4 cis16 dis16 e8 \! )\st r8 r4
     |
     %% 31
-    r8 d,8 d8 r8 r8 d'8 d8 r8 |
+    r8 d,8-5\st d8-4\st r8 r8 d'8-1 \st d8-2 \st r8 |
     %% 32
-    r16 g,16 a16 b16 c16 d16 -1 e16 -3 fis16 g8 r8 r4 |
+    r16 g,16-5 \<( a16 b16 c16 d16-1 e16-3 fis16 g8 \st) \! r8 r4 |
     %% 33
-    r16 g,16 a16 b16 c16 d16 e16 fis16 g8 r8 r4 |
+    r16 g,16-5 \< ( a16 b16 c16 d16-1 e16-3 fis16 g8 \st) \! r8 r4 |
     %% 34
-    r16 g,16 a16 b16 c16 d16 e16 fis16 g8 g8 g8 g8 |
+    r16 g,16-5 \f\<( a16 b16 c16 d16-1 e16-3 fis16 \! g8-1\st ) g8-2 \st g8-1 \st g8-2 \st |
     %% 35
-    g8 r8 g8 r8 g8 r8 g8 r8 |
+    g8-1 \st r8 g8-2 \st r8 g8-1 \st r8 g8-2 \st r8 |
     %% 36
-    g4 r4 g4 r4 |
+    g4-1 r4 g4-2 r4 |
     %% 37
-    g4 r4 g4 r4 |
+    g4-1 r4 g4-2 r4 |
     %% 38
-    <c,, e g>1 |
+    <c,, e g>1_( \f |
     %% 39
-    <d f g>4 <c e g>4 <b f' g>4 r4 | \barNumberCheck #40
-    <b f' g>1 |
+    <d_4 f g>4 \st ) <c_5 e g>4 \st <b f' g>4 \st r4 |
+    \barNumberCheck #40
+    <b f' g>1_( \f |
     %% 41
-    <c e g>4 <b f' g>4 <c e g>4 r4 |
+    <c_4 e g>4 \st ) <b f' g>4 \st <c_4 e g>4 \st r4 |
     %% 42
-    c'8 e8 <b d>8 e8 <a, c>8 e'8 <a, c>8 e'8 |
+    c'8-3 ( \pp e8 <b d>8 e8 <a, c>8 e'8 <a, c>8 e'8 ) ( |
     %% 43
-    <gis, d'>8 e'8 <gis, d'>8 e'8 <a, c>8 e'8 <a, c>8 e'8 |
+    <gis,_5 d'>8 ) ( e'8 <gis, d'>8 e'8 <a,_4 c>8 e'8 <a, c>8 e'8-3 )( |
     %% 44
-    <a,-5 c-3>8 c8 -1 <g-4 bes-2>8 c8 <f, a>8 c'8 <f, a>8 c'8
-    |
+    <a,-5 c-3>8 \st ) c8-1 ( <g-4 bes-2>8 c8 <f, a>8 c'8 <f, a>8 c'8 ) ( |
     %% 45
-    <e, bes'>8 c'8 <e, bes'>8 c'8 <f, a>8 c'8 <f, a>8 c'8 |
+    <e, bes'>8 )( c'8 <e, bes'>8 c'8 <f,_5 a>8 c'8 <f, a>8 c'8 \st )( |
     %% 46
-    <fis, c'>8 d'8 <fis, c'>8 d'8 <g, b>8 d'8 <g, b>8 d'8 |
+    <fis,-5 c'-2>8 ) d'8 <fis, c'>8 d'8 <g,_5 b>8 d'8 <g, b>8 d'8 ( |
     %% 47
-    \clef "treble" <b f'>8 g'8 <b, f'>8 g'8 <c, e>8 g'8 <c, e>8
-    g'8 |
+    \clef "treble" <b-5 f'-2>8 ) ( g'8 <b, f'>8 g'8 <c, e>8 g'8 <c, e>8
+    g'8 \st ) |
     %% 48
-    <e g>1 |
+    <e-4 g-2>1 \sf ( |
     %% 49
-    f1 | \barNumberCheck #50
-    r4 <g, d' f>4 <g d' f>4 <g d' f>4 |
+    f1 ) | \barNumberCheck #50
+    r4 <g, d' f>4 \st <g d' f>4 \st <g d' f>4 \st |
     %% 51
-    <a c e>4 <b f' g>4 <c e g>4 r4 |
+    <a_5 c e>4 \st <b_5 f' g>4 \st <c_5 e g>4 \st r4 |
     %% 52
-    <e g>1 |
+    <e-4 g-2>1 \sf ( |
     %% 53
-    <f a>2 r2 |
+    <f a>2 ) r2 |
     %% 54
-    \clef "bass" r16 g,16 a16 b16 c16 d16 e16 f16 g8 g8 g8 g8 |
+    \clef "bass" r16 g,16-5\< ( a16 b16 c16 d16-1 e16-3 f16 \! g8-1 \st ) g8-2 \st g8-1 \st g8-2 \st|
     %% 55
     c,4 r4 r2 |
     %% 56
-    r16 g16 a16 b16 c16 d16 e16 f16 g8 g8 g8 g8 |
+    r16 g16-5 \< ( a16 b16 c16 d16-1 e16-3 f16 \! g8 \st ) g8-1 \st g8-2 \st g8-1 \st |
     %% 57
     c,4 r4 r2 |
     %% 58
-    r16 g16 a16 b16 c16 d16 e16 f16 g8 g8 \st g8 \st g8 \st |
+    r16 g16-5 \< ( a16 b16 c16 d16-1 e16-3 f16 \! g8-1 \st ) g8-2 \st g8-1 \st g8-2 \st |
+    }
     \alternative {
-      { c,4 c4 c,8 r8 s4 }
-      { \barNumberCheck #60 c'4 c4 c,4 r4 }
+      { c,4-5 \st c4-1 \st c,8 \st s8 s4 }
+      { \barNumberCheck #60 c'4-5 \st c4-1 \st c,4 \st r4 }
     } \bar "|."
-  }
 }
 MvtTwoLower =  \relative c
 {
