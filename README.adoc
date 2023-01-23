@@ -1,5 +1,7 @@
 = A Random Collection of Sheet Music
 
+image::https://img.shields.io/github/actions/workflow/status/MetroWind/sheets/build.yaml[build badge]
+
 image::title.png[Title Picture]
 
 These are the https://lilypond.org/[Lilypond] source files for a
