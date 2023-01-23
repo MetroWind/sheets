@@ -1,0 +1,16 @@
+name: Build all sheets
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Lilypond
+        run: sudo apt-get install -y lilypond
+      - name: Download font
+        run: "mkdir -pv ~/.fonts && wget -P ~/.fonts/ https://github.com/adobe-fonts/source-han-serif/releases/download/2.001R/01_SourceHanSerif.ttc.zip"
+      - name: Extract font
+        run: "pushd ~/.fonts && unzip 01_SourceHanSerif.ttc.zip && popd"
+
+      - uses: actions/checkout@v3
+      - name: Build sheets
+        run: "bash make-all.sh"
