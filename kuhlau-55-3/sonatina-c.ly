@@ -12,7 +12,7 @@ $(case output-spec
        (minimum-distance . 4)
        (padding . 1)
       (stretchability . 60))
-     left-margin = 5
+     left-margin = 10
      right-margin = 5
          }
    #}
