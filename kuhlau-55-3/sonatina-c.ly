@@ -98,7 +98,7 @@ MvtOneUpper =  \relative e'
     c8 ) \st c8 \st e16 ( d16 c16 d16 e4 ) \st r8 e'8-4 \st\p | % 13
     e8-3 \st e8-2 \st e8-1 ( fis16 gis16 a8-1 \st ) c4 ( -> -3 a8 | % 14
     b8-2 \st ) e4 ( -> b8 c16 d16 c16 b16 a8 \st ) c16-4 ( b16 | % 15
-    a16 g16-1 fis16-3 e16 d16-1 e16 f16-3 fis16-4 g8-5 \st ) b4-3 ( -> g8 | % 16
+    a16 g16-1 fis16-3 e16 d16-1 e16 f16-3 fis16-4 g8-1 \st ) b4-3 ( -> g8 | % 16
     %% 17
     a8 \st ) d4 ( -> a8 b16-2 c16 b16 a16 g8 \st ) b16-3 a16 |
     %% 18
@@ -398,7 +398,7 @@ MvtOneLower =  \relative c'
     %% 17
     <fis, c'>8 )( d'8 <fis, c'>8 d'8 <g,_5 b>8 d'8 <g, b>8 d'8 \st ) |
     %% 18
-    <g,-4 b-2>1 \sf ( |
+    <b-3 d-1>1 \sf ( |
     %% 19
     c1 ) | \barNumberCheck #20
     r4 <d, a' c>4 \st <d a' c>4 \st <d a' c>4 \st |
@@ -449,7 +449,7 @@ MvtOneLower =  \relative c'
     %% 42
     c'8-3 ( \pp e8 <b d>8 e8 <a, c>8 e'8 <a, c>8 e'8 ) ( |
     %% 43
-    <gis,_5 d'>8 ) ( e'8 <gis, d'>8 e'8 <a,_4 c>8 e'8 <a, c>8 e'8-3 )( |
+    <gis,_5 d'>8 ) ( e'8 <gis, d'>8 e'8 <a,_5 c>8 e'8 <a, c>8 e'8-1 )( |
     %% 44
     <a,-5 c-3>8 \st ) c8-1 ( <g-4 bes-2>8 c8 <f, a>8 c'8 <f, a>8 c'8 ) ( |
     %% 45
