@@ -71,40 +71,42 @@ allegreto = \markup { \bold \large Allegreto }
       r4  \scaleDurations #'(2 . 3) { r8 g[( bes] e[ bes g'] e[ bes g]) }
       r4  \scaleDurations #'(2 . 3) { r8 a[( d] fis[ d a'] fis[ d a]) }
       r4  \scaleDurations #'(2 . 3) { r8 a[( d] fis[ d a'] fis[ d a]) }
-      r4 \tuplet 3/2 { d8 a' g~ } g4 \tuplet 3/2 { c,8 g' f!~ }
-      f4 \tuplet 3/2 { bes,8_2 f' ees~ } ees4 \tuplet 3/2 { b8 e d }
-      r4 \scaleDurations #'(2 . 3) { r8 cis-2[ e-1] a[ cis e!-1] a[ cis e] }
+      r4 \tuplet 3/2 { d8 ( a' g~ } g4 ) \tuplet 3/2 { c,8 ( g' f!~ }
+      f4 ) \tuplet 3/2 { bes,8_2 ( f' ees~ } ees4 ) \tuplet 3/2 { b8 ( e d ) }
+      r4( \scaleDurations #'(2 . 3) { r8 cis-2[ e-1] a[ cis e!-1] a[ cis e] }
       \scaleDurations #'(2 . 3) { dis-4[ e bis-3] cis[ gis-2 a-5] dis,-3[ e bis-2] cis-4[ gis-2 a] }
-      r1^\fermata \bar "||"
+      r1^\fermata ) \bar "||"
 
 %%% ====        Movimiento 2        ==== %%%%
       %% 12
       \set Score.tempoHideNote = ##t
       \tempo 2 = 30
-      f'4..-3\p^\adagio e32 f g!8 f e d!
-      cis4 r8. d16-. dis8( e) r4
-      g4.. fis32 g a8 g f e
+      f'4..-3\p^\adagio ( e32 f g!8 ) f e d!
+      cis4-2 r8. d16-. dis8( e) r4
+      %% 14
+      g4..-4 ( fis32 g a8 ) g f e
       d!4 r8. e16-. g8( f) r4
-      <a,-5 a'>2_\f( <bes-4 bes'>8) r8 r4
-      a'8._\p[( d16] \tuplet 3/2 { cis8-.[ c-. b!-.] } bes!4-2) r8. a16-.-3
-      a8( gis) r g r fis r <d f>
-      r8 <cis-2 e-1> <e a> <a-1 cis-3> <cis e> r8 r4
+      <a, a'>2_\f( <bes-4 bes'>8) r8 r4
+      a'8._\p[( d16] \tuplet 3/2 { cis8-.[ c-. b!-.-1] } bes!4-2) r8. a16-.-3
+      a8-4( gis) r g r fis r <d f>
+      %% 19
+      r8 <cis-2 e-3> <e a> <a-1 cis-3> <cis e> r8 r4
       <<
         {
           \voiceOne
-          e,,8^3_\f e^4 e e e^4 e e^4 e
-          e^4 e e^4 e e^4( dis^3) a'^5 a
+          e,,8-3\f e e e e e e e
+          e e e e e-3( dis) a'^5 a
           a4.^4( gis32 a b a
         }
         \new Voice {
           \voiceTwo
-          r2 r4 c,!^2
-          b^1 bes^2 a^1 dis^2
-          dis2^1
+          r2 r4 c,!
+          b bes a-1 dis-2
+          dis2-1
         }
       >>
       \oneVoice
-      <e^1 gis^3>4) r8. b'16-.-3_\p
+      <e gis>4) r8. b'16-.-3_\p
       a([ gis) r b-.] a([ gis) r b-.] a([ gis) r b-.] r d![ r gis,-.]
       b([ a) r c-.]   b([ a) r c-.]   b([ a) r c-.]   r e-5[ r a,-.]
       c-3([ b) r d-.] c([ b) r d-.]   c([ b) r d-.]   r f[ r b,]
@@ -385,14 +387,14 @@ allegreto = \markup { \bold \large Allegreto }
       <<
         {
           \voiceOne
-          \tuplet 3/2 { d8 f_4 a } d2.
-          \tuplet 3/2 { d,8 f a } d2.
-          \tuplet 3/2 { d,8 g_3 bes } d2.
-          \tuplet 3/2 { d,8 g bes } d2.
-          \tuplet 3/2 { c,8 fis a  } c2.
-          \tuplet 3/2 { c,8 fis a  } c2.
-          \tuplet 3/2 { bes8_4 d g ~ } g4 \tuplet 3/2 { a,8_\markup { \finger "5 - 4" } c_2 f!_1~ } f4
-          \tuplet 3/2 { g,8_5 bes_3 ees_1~ } ees4 \tuplet 3/2 { gis,8_4 b f'~ } f4
+          \tuplet 3/2 { d8( f_4 a } d2.)
+          \tuplet 3/2 { d,8 ( f a } d2.)
+          \tuplet 3/2 { d,8 ( g_3 bes } d2.)
+          \tuplet 3/2 { d,8( g bes } d2.)
+          \tuplet 3/2 { c,8 ( fis a } c2.)
+          \tuplet 3/2 { c,8 ( fis a } c2.)
+          \tuplet 3/2 { bes8_4 ( d g ~ } g4 ) \tuplet 3/2 { a,8-5 ( c f!~ } f4 )
+          \tuplet 3/2 { g,8_5 ( bes_4 ees_2~ } ees4) \tuplet 3/2 { gis,8_5 ( b f'~ } f4)
         }
         \new Voice {
           \voiceTwo
@@ -424,8 +426,8 @@ allegreto = \markup { \bold \large Allegreto }
         }
         \new Voice {
           \voiceTwo
-          d2-4 d
-          e-3 e
+          d2 d
+          e e
           cis-5 cis
           d-4 d
         }
@@ -433,7 +435,7 @@ allegreto = \markup { \bold \large Allegreto }
       \oneVoice
       \clef bass
       %% 16
-      r4 <f,-4 a-2 d-1>4( <e-5 g-3 cis-1>8) r8 r4
+      r4 <f,-5 a-3 d-1>4( <e-5 g-4 cis-2>8) r8 r4
       \clef treble
       r4 <f' d'>( <g-4 cis-2>) r8. <f d'>16
       <e-5 e'>8 r <a-3 cis-2> r <d, d'> r <gis-3 b-2> r
@@ -441,7 +443,7 @@ allegreto = \markup { \bold \large Allegreto }
       \clef bass
       r2 r4 <a,, a'>
       %% 21
-      <gis_4 gis'> <g_5 g'> <fis_4 fis'> <f f'>
+      <gis_4 gis'> <g g'> <fis_4 fis'> <f f'>
       <e~ e'~>2 <e e'>4 r
       \clef treble
       r8 <d''-2 f-1> <d f> <d f> <d f> <d f> <d f> <d f>
