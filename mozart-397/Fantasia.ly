@@ -35,7 +35,7 @@ andante = \markup { \bold \large Andante }
 adagio = \markup { \bold \large Adagio }
 presto = \markup { \bold \large Presto }
 tempoI = \markup { \bold \large "Tempo I" }
-allegreto = \markup { \bold \large Allegreto }
+allegreto = \markup { \bold \large Allegretto }
 
 \header {
   title = "Fantasy in D minor"
@@ -51,6 +51,7 @@ allegreto = \markup { \bold \large Allegreto }
 \score {
 
   \new PianoStaff <<
+    \accidentalStyle Score.piano-cautionary
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%% ====        Mano Derecha        ==== %%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,17 +108,21 @@ allegreto = \markup { \bold \large Allegreto }
       >>
       \oneVoice
       <e gis>4) r8. b'16-.-3_\p
-      a([ gis) r b-.] a([ gis) r b-.] a([ gis) r b-.] r d![ r gis,-.]
-      b([ a) r c-.]   b([ a) r c-.]   b([ a) r c-.]   r e-5[ r a,-.]
+      a([ gis) r b-.] a([ gis) r b-.] a([ gis) r b-.] r d![ r gis,-.-2-\markup{\sharp}]
+      %% 24
+      b([ a) r c-.-3]   b([ a) r c-.]   b([ a) r c-.]   r e-5[ r a,-.]
       c-3([ b) r d-.] c([ b) r d-.]   c([ b) r d-.]   r f[ r b,]
-      d-2([ c) r a'-5] r\cresc gis[ r g] r f[ r e] r dis-3-\f[ r d-2-.-\p]
-      c-1([ e) r a] r\cresc gis[ r g] r f[ r e] r-\f dis-3[ r d]
+      %% 26
+      d-2([ c) r a'-5] r\cresc gis-4[ r g-3] r f-2[ r e-1] r dis-3-\f[ r d-2-.-\p]
+      c-1([ e) r a-5] r\cresc gis-4[ r g-3] r f-2[ r e-1] r-\f dis-3[ r d]
       r1\fermata
-      c4..-\p b32 c d8 c b a
-      gis4 r8. a16-. ais8( b) r4
-      f'4..-4 e32 f g!8 f e d
+      %% 29
+      c4..-2 \p b32 c d8 c b-1 a-3
+      gis4-2 r8. a16-. ais8( b) r4
+      f'4..-2 e32 f g!8 f e d
       cis4 r8. d16-. dis8( e) r8. f16-.
-      fis8\cresc( g) r8. a16-. c!8-\f( bes) r4
+      %% 33
+      fis8\cresc( g) r8. a16-.-2 c!8-4 \f( bes) r4
       %% Frase Rápida %%
       \set Score.tempoHideNote = ##t
       \tempo 2 = 65
@@ -137,7 +142,7 @@ allegreto = \markup { \bold \large Allegreto }
       c!-5[ ees-3 fis a]
       \change Staff = "derecha"
       \clef treble
-      c!-1[ ees fis a c!-5] ees8
+      c!-1[ ees-2 fis-3 a-1 c!-2] ees8-3
       \set Score.tempoHideNote = ##t
       \tempo 2 = 30
       r\fermata
@@ -447,11 +452,12 @@ allegreto = \markup { \bold \large Allegreto }
       <e~ e'~>2 <e e'>4 r
       \clef treble
       r8 <d''-2 f-1> <d f> <d f> <d f> <d f> <d f> <d f>
-      r  <c-1 e-3>   <c e> <c e> <c e> <c e> <c e> <c e>
+      %% 24
+      r  <c-3 e-1>   <c e> <c e> <c e> <c e> <c e> <c e>
       r  <gis e'> <gis e'> <gis e'> <gis e'> <gis e'> <gis e'> <gis e'>
       %% 26
-      <a e'> <a-4 c-2> <b\finger "3-5" d-1> <cis-2 e-4>
-      <d\finger "3-5" f-1> <e\finger "4-5" gis-2> <fis-4 a-1> <gis-2 b-1>
+      <a e'> <a-4 c-2> <b-3 d-1> <cis-4 e-2>
+      <d-3 f-1> <e-4 gis-2> <fis-3 a-1> <gis-4 b-2>_\markup{\sharp}
       <<
         {
           \voiceOne
@@ -459,12 +465,12 @@ allegreto = \markup { \bold \large Allegreto }
         }
         \new Voice {
           \voiceTwo
-          a a,-5 b-4 cis\finger "3-5"
+          a a,-5 b-4 cis-3
         }
       >>
       \oneVoice
       %% 27
-      <d\finger "3-5" f!-1> <e\finger "4-5" gis-2> <fis-4 a-1> <gis-2 b-1>
+      <d-3 f!-1> <e-4 gis-2> <fis-3 a-1> <gis-4 b-2>
       r1-\fermata
       \clef bass
       <<
@@ -499,11 +505,11 @@ allegreto = \markup { \bold \large Allegreto }
       r <bes d> <bes d> <bes d> <bes d> <bes d> <bes d> <bes d>
       r <fis d'> <fis d'> <fis d'> <fis d'> <fis d'> <fis d'> <fis d'>
       %% 40
-      <g-5 d'-1> <g-5 bes-3> <a-4 c-2> <b\finger "3-5" d-1>
-      \clef treble <c-2 ees-4> <d\finger "3-5" fis-1> <e-4 g-2> <fis-3 a-1>
+      <g-5 d'-1> <g-5 bes-3> <a-4 c-2> <b-3 d-1>
+      \clef treble <c-5 ees-3> <d-4 fis-2> <e-3 g-1> <fis-4 a-2>
       %% 41
-      g-2 <g,-5 bes!-3> <a-4 c-2> <b-5 d-1>
-      <c-3 g'-1> <bes-4 des-2> <a-5 c-1> <c-3 ees-2>
+      g-3 <g,-5 bes!-3> <a-4 c-2> <b-3 d-1>
+      <c-3 g'-1> <bes-4 des-2> <a-5 c-3> <c-3 ees-1>
       %% 42
       \clef bass
       <<
@@ -513,7 +519,7 @@ allegreto = \markup { \bold \large Allegreto }
         }
         \new Voice {
           \voiceTwo
-          b8-4 fis-5 g-3 f-4
+          b8-3 fis-5 g-3 f-4
         }
       >>
       \oneVoice
