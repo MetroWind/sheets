@@ -68,6 +68,24 @@ Upper = \relative c'''
   %% 18
   d8 b fis b cis b d b fis' d a' b16 a |
   gis8 a cis b d cis e d fis e eis fis |
+  %% 20
+  eis8 cis cis gis gis eis eis cis cis gis gis b' |
+  b cis a gis a fis eis fis d e cis d |
+  %% 22
+  eis8 cis cis gis gis eis eis gis gis cis cis e |
+  e d cis d cis b fis b cis d eis fis |
+  %% 24
+  eis8 fis a4 gis eis8 gis b4 a |
+  d,8 fis cis'4 b e,8 gis cis4 d\fermata |
+  \time 5/4
+  <cis fis,>2.\arpeggio cis4\fermata cis\fermata |
+  %% 27
+  \tempo 4. = 66
+  \time 12/8
+  cis4.^"Delicately" cis b~b8 e b | a4. a gis~gis8 cis gis |
+  %% 29
+  fis4.~fis8 gis a e4.~e8 gis a |
+  d,4.~d8 fis a a gis8. fis16 gis8 e16 gis a b |
 }
 
 Lower =  \relative c,
@@ -100,6 +118,27 @@ Lower =  \relative c,
     \\
     { b,,1. }
   >> |
+  %% 20
+  cis4 gis' cis eis gis cis | d,, a' d fis a d |
+  %% 22
+  cis,,4 gis' cis eis gis cis |
+  <<
+    { b,4 d fis b d, fis }
+    \\
+    { b,,1. }
+  >> |
+  %% 24
+  cis4 gis' eis' d, a' fis' | b, d b' e,, b'~<b e gis> \fermata |
+  \time 5/4
+  fis8 cis' fis ais cis fis~fis2 \fermata |
+  %% 27
+  \time 12/8
+  \clef treble
+  d8 fis a d,8 fis a e gis b e, gis b |
+  fis a cis fis, a cis e, gis cis e, gis cis |
+  %% 29
+  d, fis a d, fis a cis, e a cis, e a |
+  b, d fis a b fis \clef bass e, gis b e b e |
 }
 
 %% The score definition
